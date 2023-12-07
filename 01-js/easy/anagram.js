@@ -5,41 +5,29 @@
 */
 
 function isAnagram(str1, str2) {
-  
+
   /**
    * STEP 1
-   * ------
-   * Comparing Parameter if str1 and str2 are not string,
-   * Comparing the length of str1 and str2 are equals to 0
-   * 
-   * If both the above conditions are not fulfilled then it will return false  
+   * ------- 
+   * Converting both the strings to Lowercase format for uniform word format
    */
-  if (typeof str1 !== "string" || typeof str2 !== "string" || str1.length === 0 || str2.length === 0) {
-    return false;
-  } 
+  const lowercaseStr1 = str1.toLowerCase();
+  const lowercaseStr2 = str2.toLowerCase(); 
 
   /**
    * STEP 2
-   * ------- 
-   * Converting both the strings to uppercase format for uniform word format
-   */
-  const uppercaseStr1 = str1.toUpperCase();
-  const uppercaseStr2 = str2.toUpperCase(); 
-
-  /**
-   * STEP 3
    * ------
    * Resuffelling Characters
-   * Defined two new constants which will store the new resuffelled value of uppercaseStr1 and uppercaseStr2
+   * Defined two new constants which will store the new resuffelled value of lowercaseStr1 and lowercaseStr2
    * Split them into single characters
    * Sorting the characters into an order
    * Joining them all together to creater a new word.
    */
-  const resuffelledstr1 = uppercaseStr1.split('').sort().join('');
-  const resuffelledstr2 = uppercaseStr2.split('').sort().join('');
+  const resuffelledstr1 = lowercaseStr1.split('').sort().join('');
+  const resuffelledstr2 = lowercaseStr2.split('').sort().join('');
 
   /**
-   * STEP 4
+   * STEP 3
    * -------
    * Comparing the new values stored constants created in STEP 3
    */
